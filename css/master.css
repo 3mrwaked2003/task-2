@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: black;
+}
+section {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 0.5fr 1.3fr 0.7fr 0.5fr;
+  gap: 5px;
+  grid-template-areas:
+    " hedaer hedaer hedaer hedaer"
+    " aside  content-1 content-1 content-1"
+    " aside  content-2 content-3 content-4"
+    " footer footer     footer   footer";
+}
+.hedaer {
+  background: rgb(127, 132, 131);
+  background: linear-gradient(
+    90deg,
+    rgba(127, 132, 131, 1) 5%,
+    rgba(29, 105, 147, 1) 100%
+  );
+  grid-area: hedaer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hedaer img {
+  width: 150px;
+  height: 80px;
+  margin-left: 100px;
+}
+.hedaer i {
+  display: none;
+}
+ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-right: 10px;
+}
+ul li a {
+  font-size: 19px;
+  width: 140px;
+  text-align: center;
+  text-transform: capitalize;
+  padding: auto;
+  display: block;
+  background-color: #33333347;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  transition: 1s ease;
+  border-radius: 10px;
+}
+ul li a:hover {
+  background-color: #333;
+  border: 1px solid #007bff;
+  color: #007bff;
+}
+
+.aside {
+  background: rgb(127, 132, 131);
+  background: linear-gradient(
+    90deg,
+    rgba(127, 132, 131, 1) 53%,
+    rgba(85, 102, 110, 1) 100%
+  );
+  grid-area: aside;
+  padding: 15px;
+}
+.aside p {
+  font-size: 19px;
+  text-align: left;
+  margin-top: 20px;
+  font-weight: 500;
+}
+.content-1 {
+  background-color: aqua;
+  grid-area: content-1;
+  background: url(../img/content-1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.content-2 {
+  background-color: aqua;
+  grid-area: content-2;
+  background: url(../img/content-2.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.content-3 {
+  background-color: aqua;
+  grid-area: content-3;
+  background: url(../img/images\ 3.jpeg);
+  background-size: cover;
+}
+.content-4 {
+  background-color: aqua;
+  grid-area: content-4;
+  background: url(../img/images\ 4.jpeg);
+  background-size: cover;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(127, 132, 131);
+  background: linear-gradient(
+    90deg,
+    rgba(127, 132, 131, 1) 5%,
+    rgba(29, 105, 147, 1) 100%
+  );
+  grid-area: footer;
+}
+.footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-decoration: none;
+  color: white;
+  font-size: 30px;
+  margin-left: 10px;
+  background-color: black;
+}
+.footer a:hover {
+  background-color: rgba(0, 0, 0, 0.605);
+}
+@media (max-width: 568px) {
+  section {
+    /* height: 100vh; */
+    /* flex-direction: column; */
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.8fr 0.8fr 1fr 1fr 1fr 1fr 0.5fr;
+    grid-template-areas:
+      "hedaer"
+      "aside"
+      "content-1"
+      "content-2"
+      "content-3"
+      "content-4"
+      "footer";
+  }
+  section .hedaer ul {
+    display: none;
+  }
+  .hedaer img {
+    margin-left: 0;
+    margin-top: -15px;
+  }
+  .hedaer i {
+    display: block;
+    font-size: 30px;
+    width: 100px;
+    text-align: center;
+    background-color: #33333347;
+    color: #333;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: 1s ease;
+    margin-right: 30px;
+    border-radius: 10px;
+  }
+  .hedaer i:hover {
+    background-color: #333;
+    border: 1px solid #007bff;
+    color: #007bff;
+  }
+  ul li a {
+    color: white;
+    border: 1px solid #007bff;
+  }
+  .hedaer a {
+    text-decoration: none;
+  }
+  section .hedaer a:focus + ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 105px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 50%;
+  }
+  .aside {
+    overflow-y: scroll;
+  }
+}
